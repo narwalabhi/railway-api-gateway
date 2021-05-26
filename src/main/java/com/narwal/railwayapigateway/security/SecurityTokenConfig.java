@@ -29,6 +29,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
                 .and()
+
                 .authorizeRequests()
                 .antMatchers(jwtConfig.getUri()).permitAll()
                 //TODO Add search antMatchers
